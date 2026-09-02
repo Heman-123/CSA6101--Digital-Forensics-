@@ -1,0 +1,293 @@
+{
+  "case": {
+    "case_id": "CASE-001",
+    "title": "Regional Bank Smartphone Data Breach",
+    "background": "Suspected compromise of an employee smartphone. The system is used to preserve, cross-check and correlate simulated handset-derived evidence.",
+    "created_at": "2026-09-02T14:42:25+05:30"
+  },
+  "devices": [
+    {
+      "device_id": "DEV-0001",
+      "source": "Simulated Employee Smartphone / Extraction DEMO-001",
+      "origin": "Regional Bank IT Security Team - simulated seizure",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "enrolled_at": "2026-09-02T14:42:41+05:30"
+    }
+  ],
+  "artifacts": [
+    {
+      "evidence_id": "EVD-0001",
+      "device_id": "DEV-0001",
+      "artifact_type": "Call Records",
+      "file_name": "calls_sample.csv",
+      "file_path": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\calls_sample.csv",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "intake_sha256": "b011f4cdccc7ec7740d1b6cb3d654828997e2414d1a0ad90708a91289b284aa4",
+      "enrolled_at": "2026-09-02T14:42:41+05:30"
+    },
+    {
+      "evidence_id": "EVD-0002",
+      "device_id": "DEV-0001",
+      "artifact_type": "SMS/Chat Export",
+      "file_name": "messages_sample.csv",
+      "file_path": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\messages_sample.csv",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "intake_sha256": "6d8f5efae3b6e2edafeaa9d7c5142cefc70dc4be76844a6654b430ac69a43b00",
+      "enrolled_at": "2026-09-02T14:42:41+05:30"
+    },
+    {
+      "evidence_id": "EVD-0003",
+      "device_id": "DEV-0001",
+      "artifact_type": "Application Usage/Auth Logs",
+      "file_name": "app_auth_sample.csv",
+      "file_path": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\app_auth_sample.csv",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "intake_sha256": "4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453",
+      "enrolled_at": "2026-09-02T14:42:41+05:30",
+      "reviews": [
+        {
+          "reviewed_at": "2026-09-02T14:44:04+05:30",
+          "stored_sha256": "4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453",
+          "fresh_sha256": "4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453",
+          "result": "PASS - checksum matches; no integrity discrepancy detected."
+        }
+      ]
+    },
+    {
+      "evidence_id": "EVD-0004",
+      "device_id": "DEV-0001",
+      "artifact_type": "GPS Location History",
+      "file_name": "gps_sample.csv",
+      "file_path": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\gps_sample.csv",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "intake_sha256": "a8180d647f0f90ae18cd44f775a814c8ca838f697c9640a45461a439c74276e5",
+      "enrolled_at": "2026-09-02T14:42:41+05:30"
+    },
+    {
+      "evidence_id": "EVD-0005",
+      "device_id": "DEV-0001",
+      "artifact_type": "Network Traffic Capture",
+      "file_name": "network_sample.csv",
+      "file_path": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\network_sample.csv",
+      "acquisition_datetime": "2026-08-28T09:00:00+05:30",
+      "examiner": "Demo Examiner",
+      "storage_location": "Forensic Evidence Locker A-01",
+      "intake_sha256": "908a8158c4c9a1b5e94e6ec59e5503db568bef9937c5fc301a8565c2941f3ebd",
+      "enrolled_at": "2026-09-02T14:42:41+05:30"
+    }
+  ],
+  "custody": [
+    {
+      "custody_id": "CUS-0001",
+      "item_type": "device",
+      "item_id": "DEV-0001",
+      "handler": "First Responder",
+      "timestamp": "2026-08-28T09:05:00+05:30",
+      "reason": "Seizure and transfer to forensic examiner"
+    },
+    {
+      "custody_id": "CUS-0002",
+      "item_type": "device",
+      "item_id": "DEV-0001",
+      "handler": "Demo Examiner",
+      "timestamp": "2026-08-28T09:20:00+05:30",
+      "reason": "Forensic acquisition and examination"
+    }
+  ],
+  "baseline": [
+    {
+      "name": "BankPortal",
+      "version": "5.2"
+    },
+    {
+      "name": "Messages",
+      "version": "12.1"
+    },
+    {
+      "name": "Maps",
+      "version": "10.4"
+    },
+    {
+      "name": "Camera",
+      "version": "8.0"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot_id": "SNP-0001",
+      "type": "baseline",
+      "source_file": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\installed_apps_baseline.csv",
+      "captured_at": "2026-08-28T09:00:00+05:30",
+      "apps": [
+        {
+          "name": "BankPortal",
+          "version": "5.2"
+        },
+        {
+          "name": "Messages",
+          "version": "12.1"
+        },
+        {
+          "name": "Maps",
+          "version": "10.4"
+        },
+        {
+          "name": "Camera",
+          "version": "8.0"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "SNP-0002",
+      "type": "later",
+      "source_file": "C:\\Users\\saich\\OneDrive\\Desktop\\mobile\\evidence_files\\installed_apps_later.csv",
+      "captured_at": "2026-08-28T10:00:00+05:30",
+      "apps": [
+        {
+          "name": "BankPortal",
+          "version": "5.2"
+        },
+        {
+          "name": "Messages",
+          "version": "12.1"
+        },
+        {
+          "name": "Maps",
+          "version": "10.5"
+        },
+        {
+          "name": "Camera",
+          "version": "8.0"
+        },
+        {
+          "name": "UnknownTransfer",
+          "version": "1.0"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "EVT-0001",
+      "source": "Application Usage / Authentication Logs",
+      "timestamp": "2026-08-28T09:42:00+05:30",
+      "event_type": "unauthorized login",
+      "details": "event=unauthorized login | application=BankPortal | details=unknown IP 203.0.113.50"
+    },
+    {
+      "event_id": "EVT-0002",
+      "source": "Application Usage / Authentication Logs",
+      "timestamp": "2026-08-28T09:46:00+05:30",
+      "event_type": "new app",
+      "details": "event=new app | application=UnknownTransfer | details=installed from unknown source"
+    },
+    {
+      "event_id": "EVT-0003",
+      "source": "SMS / Messaging Records",
+      "timestamp": "2026-08-28T09:30:00+05:30",
+      "event_type": "SMS / Messaging Records",
+      "details": "sender=employee | receiver=bank-support | message=Login alert received"
+    },
+    {
+      "event_id": "EVT-0004",
+      "source": "SMS / Messaging Records",
+      "timestamp": "2026-08-28T09:55:00+05:30",
+      "event_type": "SMS / Messaging Records",
+      "details": "sender=employee | receiver=manager | message=Please verify unusual activity"
+    },
+    {
+      "event_id": "EVT-0005",
+      "source": "GPS Location History",
+      "timestamp": "2026-08-28T09:40:00+05:30",
+      "event_type": "normal location",
+      "details": "latitude=13.0827 | longitude=80.2707 | event=normal location"
+    },
+    {
+      "event_id": "EVT-0006",
+      "source": "GPS Location History",
+      "timestamp": "2026-08-28T09:50:00+05:30",
+      "event_type": "unexpected location",
+      "details": "latitude=12.9716 | longitude=77.5946 | event=unexpected location"
+    },
+    {
+      "event_id": "EVT-0007",
+      "source": "Network Traffic Events",
+      "timestamp": "2026-08-28T09:47:00+05:30",
+      "event_type": "connection",
+      "details": "src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=25000 | event=connection"
+    },
+    {
+      "event_id": "EVT-0008",
+      "source": "Network Traffic Events",
+      "timestamp": "2026-08-28T09:49:00+05:30",
+      "event_type": "large upload / exfiltration",
+      "details": "src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=85000000 | event=large upload / exfiltration"
+    },
+    {
+      "event_id": "EVT-0009",
+      "source": "Application Usage / Authentication Logs",
+      "timestamp": "2026-08-28T09:42:00+05:30",
+      "event_type": "unauthorized login",
+      "details": "event=unauthorized login | application=BankPortal | details=unknown IP 203.0.113.50"
+    },
+    {
+      "event_id": "EVT-0010",
+      "source": "Application Usage / Authentication Logs",
+      "timestamp": "2026-08-28T09:46:00+05:30",
+      "event_type": "new app",
+      "details": "event=new app | application=UnknownTransfer | details=installed from unknown source"
+    },
+    {
+      "event_id": "EVT-0011",
+      "source": "SMS / Messaging Records",
+      "timestamp": "2026-08-28T09:30:00+05:30",
+      "event_type": "SMS / Messaging Records",
+      "details": "sender=employee | receiver=bank-support | message=Login alert received"
+    },
+    {
+      "event_id": "EVT-0012",
+      "source": "SMS / Messaging Records",
+      "timestamp": "2026-08-28T09:55:00+05:30",
+      "event_type": "SMS / Messaging Records",
+      "details": "sender=employee | receiver=manager | message=Please verify unusual activity"
+    },
+    {
+      "event_id": "EVT-0013",
+      "source": "GPS Location History",
+      "timestamp": "2026-08-28T09:40:00+05:30",
+      "event_type": "normal location",
+      "details": "latitude=13.0827 | longitude=80.2707 | event=normal location"
+    },
+    {
+      "event_id": "EVT-0014",
+      "source": "GPS Location History",
+      "timestamp": "2026-08-28T09:50:00+05:30",
+      "event_type": "unexpected location",
+      "details": "latitude=12.9716 | longitude=77.5946 | event=unexpected location"
+    },
+    {
+      "event_id": "EVT-0015",
+      "source": "Network Traffic Events",
+      "timestamp": "2026-08-28T09:47:00+05:30",
+      "event_type": "connection",
+      "details": "src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=25000 | event=connection"
+    },
+    {
+      "event_id": "EVT-0016",
+      "source": "Network Traffic Events",
+      "timestamp": "2026-08-28T09:49:00+05:30",
+      "event_type": "large upload / exfiltration",
+      "details": "src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=85000000 | event=large upload / exfiltration"
+    }
+  ]
+}
