@@ -1,0 +1,76 @@
+DIGITAL FORENSIC EXAMINATION REPORT
+================================================================================
+Case ID: CASE-001
+Case Title: Regional Bank Smartphone Data Breach
+Report Generated: 2026-09-02T14:44:52+05:30
+
+1. CASE BACKGROUND
+--------------------------------------------------------------------------------
+Suspected compromise of an employee smartphone. The system is used to preserve, cross-check and correlate simulated handset-derived evidence.
+
+2. ITEMS EXAMINED
+--------------------------------------------------------------------------------
+Device DEV-0001: Simulated Employee Smartphone / Extraction DEMO-001 | Origin: Regional Bank IT Security Team - simulated seizure | Acquired: 2026-08-28T09:00:00+05:30 | Examiner: Demo Examiner | Storage: Forensic Evidence Locker A-01
+Artifact EVD-0001: Call Records | File: calls_sample.csv | SHA-256: b011f4cdccc7ec7740d1b6cb3d654828997e2414d1a0ad90708a91289b284aa4
+Artifact EVD-0002: SMS/Chat Export | File: messages_sample.csv | SHA-256: 6d8f5efae3b6e2edafeaa9d7c5142cefc70dc4be76844a6654b430ac69a43b00
+Artifact EVD-0003: Application Usage/Auth Logs | File: app_auth_sample.csv | SHA-256: 4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453
+Artifact EVD-0004: GPS Location History | File: gps_sample.csv | SHA-256: a8180d647f0f90ae18cd44f775a814c8ca838f697c9640a45461a439c74276e5
+Artifact EVD-0005: Network Traffic Capture | File: network_sample.csv | SHA-256: 908a8158c4c9a1b5e94e6ec59e5503db568bef9937c5fc301a8565c2941f3ebd
+
+3. CHAIN OF CUSTODY
+--------------------------------------------------------------------------------
+CUS-0001 | device DEV-0001 | 2026-08-28T09:05:00+05:30 | Handler: First Responder | Reason: Seizure and transfer to forensic examiner
+CUS-0002 | device DEV-0001 | 2026-08-28T09:20:00+05:30 | Handler: Demo Examiner | Reason: Forensic acquisition and examination
+
+4. INTEGRITY / CHECKSUM REVIEW
+--------------------------------------------------------------------------------
+EVD-0001: No later checksum review recorded.
+EVD-0002: No later checksum review recorded.
+EVD-0003: PASS - checksum matches; no integrity discrepancy detected. | Stored=4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453 | Fresh=4ba833baaa728a0bf3f7b1acffea70c1dbf93f5358bfc83b548570fa939c2453
+EVD-0004: No later checksum review recorded.
+EVD-0005: No later checksum review recorded.
+
+5. CROSS-CHECK REVIEW
+--------------------------------------------------------------------------------
+Missing apps: None
+New apps: ['UnknownTransfer']
+Altered versions: [('Maps', '10.4', '10.5')]
+
+6. NORMALIZED EVENT SEQUENCE
+--------------------------------------------------------------------------------
+2026-08-28T09:30:00+05:30 | SMS / Messaging Records | SMS / Messaging Records | sender=employee | receiver=bank-support | message=Login alert received
+2026-08-28T09:30:00+05:30 | SMS / Messaging Records | SMS / Messaging Records | sender=employee | receiver=bank-support | message=Login alert received
+2026-08-28T09:40:00+05:30 | GPS Location History | normal location | latitude=13.0827 | longitude=80.2707 | event=normal location
+2026-08-28T09:40:00+05:30 | GPS Location History | normal location | latitude=13.0827 | longitude=80.2707 | event=normal location
+2026-08-28T09:42:00+05:30 | Application Usage / Authentication Logs | unauthorized login | event=unauthorized login | application=BankPortal | details=unknown IP 203.0.113.50
+2026-08-28T09:42:00+05:30 | Application Usage / Authentication Logs | unauthorized login | event=unauthorized login | application=BankPortal | details=unknown IP 203.0.113.50
+2026-08-28T09:46:00+05:30 | Application Usage / Authentication Logs | new app | event=new app | application=UnknownTransfer | details=installed from unknown source
+2026-08-28T09:46:00+05:30 | Application Usage / Authentication Logs | new app | event=new app | application=UnknownTransfer | details=installed from unknown source
+2026-08-28T09:47:00+05:30 | Network Traffic Events | connection | src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=25000 | event=connection
+2026-08-28T09:47:00+05:30 | Network Traffic Events | connection | src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=25000 | event=connection
+2026-08-28T09:49:00+05:30 | Network Traffic Events | large upload / exfiltration | src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=85000000 | event=large upload / exfiltration
+2026-08-28T09:49:00+05:30 | Network Traffic Events | large upload / exfiltration | src_ip=10.0.0.15 | dst_ip=203.0.113.50 | bytes=85000000 | event=large upload / exfiltration
+2026-08-28T09:50:00+05:30 | GPS Location History | unexpected location | latitude=12.9716 | longitude=77.5946 | event=unexpected location
+2026-08-28T09:50:00+05:30 | GPS Location History | unexpected location | latitude=12.9716 | longitude=77.5946 | event=unexpected location
+2026-08-28T09:55:00+05:30 | SMS / Messaging Records | SMS / Messaging Records | sender=employee | receiver=manager | message=Please verify unusual activity
+2026-08-28T09:55:00+05:30 | SMS / Messaging Records | SMS / Messaging Records | sender=employee | receiver=manager | message=Please verify unusual activity
+
+7. COMPROMISE-POINT ANALYSIS
+--------------------------------------------------------------------------------
+FACTUAL FINDING:
+The earliest rule-matched suspicious event was EVT-0001 at 2026-08-28T09:42:00+05:30 from Application Usage / Authentication Logs: unauthorized login - event=unauthorized login | application=BankPortal | details=unknown IP 203.0.113.50
+
+EXAMINER INTERPRETATION:
+This event is considered a plausible compromise point because it precedes other suspicious activity in the normalized sequence. This is an analytical interpretation and should be corroborated by the underlying evidence and independent sources.
+
+8. MANDATORY-FIELD VALIDATION
+--------------------------------------------------------------------------------
+All configured mandatory device, artifact and custody fields are present.
+
+9. CONCLUSION
+--------------------------------------------------------------------------------
+The simulated handset evidence was enrolled, integrity-checked, cross-checked, temporally correlated and interpreted. The earliest suspicious event is reported as a plausible compromise point, with factual evidence separated from examiner interpretation.
+
+10. EVIDENCE-HANDLING NOTE
+--------------------------------------------------------------------------------
+This academic prototype is designed for authorized/simulated forensic evidence only. Real call, SMS/chat, GPS and network data should be handled under applicable law, organizational policy, privacy controls and documented forensic procedures.
