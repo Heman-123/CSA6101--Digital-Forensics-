@@ -1,0 +1,3 @@
+timestamp,event,application,details
+2026-08-28T09:42:00+05:30,unauthorized login,BankPortal,unknown IP 203.0.113.50
+2026-08-28T09:46:00+05:30,new app,UnknownTransfer,installed from unknown source

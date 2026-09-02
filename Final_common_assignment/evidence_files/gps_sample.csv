@@ -1,0 +1,3 @@
+timestamp,latitude,longitude,event
+2026-08-28T09:40:00+05:30,13.0827,80.2707,normal location
+2026-08-28T09:50:00+05:30,12.9716,77.5946,unexpected location

@@ -1,0 +1,3 @@
+timestamp,sender,receiver,message
+2026-08-28T09:30:00+05:30,employee,bank-support,Login alert received
+2026-08-28T09:55:00+05:30,employee,manager,Please verify unusual activity
